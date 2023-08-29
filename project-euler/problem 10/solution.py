@@ -1,11 +1,10 @@
 import math
 
-
 prime_numbers: list[int] = []
 number = 2
 
 
-def isPrime(num):
+def is_prime(num):
     # Iterates from 2 to sqrt(num)+1 as discussed above
     # Make sure to convert sqrt to int for range
     for i in range(2, int(math.sqrt(num)) + 1):
@@ -16,7 +15,7 @@ def isPrime(num):
 
 
 while number < 2000000:
-    if isPrime(number):
+    if is_prime(number):
         prime_numbers.append(number)
 
     number += 1

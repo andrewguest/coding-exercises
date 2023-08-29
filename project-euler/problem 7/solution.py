@@ -22,4 +22,4 @@ while count < 10001:
         count += 1  # If a prime is found, increase count and continue
 
 # Print answer
-print(f"The 10,001st prime is: {num}")
+print(num)
