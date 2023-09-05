@@ -1,3 +1,6 @@
+import re
+
+
 def read_input_file(filepath: str = "./input.txt") -> list[str]:
     file_lines: list[str] = []
 
@@ -8,36 +11,34 @@ def read_input_file(filepath: str = "./input.txt") -> list[str]:
     return file_lines
 
 
-def day_1():
-    file_lines: list[str] = read_input_file()
-    fully_contained_pairs = 0
+def day_1() -> int:
+    data = read_input_file()
 
-    for line in file_lines:
-        first, second = line.split(",")
+    t = 0
+    for line in data:
+        a, b, c, d = map(int, re.findall(r"(\d+)", line))
+        if (a >= c and b <= d) or (c >= a and d <= b):
+            t += 1
 
-        first_start, first_end = first.split("-")
-        second_start, second_end = second.split("-")
-
-        if first_start != first_end:
-            first = [x for x in range(int(first.split("-")[0]), int(first.split("-")[1]) + 1)]
-        else:
-            first = [int(first_start)]
-
-        if second_start != second_end:
-            second = [x for x in range(int(second.split("-")[0]), int(second.split("-")[1]) + 1)]
-        else:
-            second = [int(second_start)]
-
-        if first == second:
-            fully_contained_pairs += 1
-        elif all(item in first for item in second):
-            fully_contained_pairs += 1
-        elif all(item in second for item in first):
-            fully_contained_pairs += 1
-        else:
-            pass
-
-    print(fully_contained_pairs)
+    return t
 
 
-day_1()
+def day_2() -> int:
+    data = read_input_file()
+
+    t = 0
+    for line in data:
+        a, b, c, d = map(int, re.findall(r"(\d+)", line))
+        print(a)
+        print(b)
+        print(c)
+        print(d)
+        if (b >= c and b <= d) or (d >= a and d <= b):
+            t += 1
+
+    return t
+
+
+print(f"Day One: {day_1()}")
+print(f"Day Two: {day_2()}")
+
