@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-function day_1() {
+function part_1() {
     let total: number = 0;
 
     const input = fs.readFileSync("./input.txt", "utf-8");
@@ -37,7 +37,7 @@ function day_1() {
 }
 
 
-function day_2() {
+function part_2() {
     let total: number = 0;
     let badge_characters: string[] = [];
     let starting_index = 0;
@@ -77,5 +77,5 @@ function day_2() {
 }
 
 
-day_1();
-day_2();
+part_1();
+part_2();

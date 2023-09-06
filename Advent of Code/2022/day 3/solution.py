@@ -1,4 +1,4 @@
-def day_1():
+def part_1():
     total = 0
 
     with open("./input.txt", "r") as f:
@@ -22,7 +22,7 @@ def day_1():
     print(total)
 
 
-def day_2():
+def part_2():
     total = 0
     badge_characters = []
     lines_in_file: list[str] = []
@@ -56,5 +56,5 @@ def day_2():
     print(total)
 
 
-day_1()
-day_2()
+part_1()
+part_2()

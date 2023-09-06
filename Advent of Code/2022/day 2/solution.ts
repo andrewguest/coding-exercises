@@ -1,6 +1,6 @@
 import * as fs from "fs";
 
-function day_1() {
+function part_1() {
     const choices: { [index: string]: string } = {
         "A": "rock",
         "B": "paper",
@@ -67,7 +67,7 @@ function day_1() {
 }
 
 
-function day_2() {
+function part_2() {
     const choices: { [index: string]: string } = {
         "A": "rock",
         "B": "paper",
@@ -129,5 +129,5 @@ function day_2() {
 }
 
 
-day_1();
-day_2();
+part_1();
+part_2();

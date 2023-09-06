@@ -1,4 +1,4 @@
-def day_1():
+def part_1():
     choices = {
         "A": "rock",
         "B": "paper",
@@ -57,7 +57,7 @@ def day_1():
     print(sum(rounds_totals))
 
 
-def day_2():
+def part_2():
     choices = {
         "A": "rock",
         "B": "paper",
@@ -115,5 +115,5 @@ def day_2():
     print(sum(rounds_totals))
 
 
-day_1()
-day_2()
+part_1()
+part_2()

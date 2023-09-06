@@ -9,50 +9,39 @@ function read_file_lines(file_name: string = "./input.txt"): string[] {
 }
 
 
-function day_1() {
-    let file_lines = read_file_lines();
-    let fully_contained_pairs = 0;
+function part_1(): number {
+    const data: string[] = read_file_lines();
 
-    for (let index = 0; index < file_lines.length; index++) {
-        const line = file_lines[index];
-        let first: any = line.split(",")[0];
-        let first_array: Number[] = [];
-        let first_start = first.split("-")[0];
-        let first_end = first.split("-")[1];
+    let t: number = 0;
 
-        let second: any = line.split(",")[1];
-        let second_array: Number[] = [];
-        let second_start = second.split("-")[0];
-        let second_end = second.split("-")[1];
+    for (const line of data) {
+        const [a, b, c, d]: number[] = line.match(/(\d+)/g)!.map(Number);
 
-        if (first_start != first_end) {
-            for (let index = Number(first_start); index <= Number(first_end); index++) {
-                first_array.push(Number(index));
-            }
-        } else {
-            first_array = [Number(first_start)];
+        if ((a >= c && b <= d) || (c >= a && d <= b)) {
+            t += 1;
         }
-
-        if (second_start != second_end) {
-            for (let index = Number(second_start); index <= Number(second_end); index++) {
-                second_array.push(Number(index));
-            }
-        } else {
-            second_array = [Number(second_start)];
-        }
-
-        if (first_array == second_array) {
-            fully_contained_pairs += 1;
-        } else if (first_array.every(element => second_array.includes(element))) {
-            fully_contained_pairs += 1;
-        } else if (second_array.every(element => first_array.includes(element))) {
-            fully_contained_pairs += 1;
-        }
-
     }
 
-    console.log(fully_contained_pairs);
+    return t;
 }
 
 
-day_1();
+function part_2(): number {
+    const data: string[] = read_file_lines();
+
+    let t: number = 0;
+
+    for (const line of data) {
+        const [a, b, c, d]: number[] = line.match(/(\d+)/g)!.map(Number);
+
+        if ((b >= c && b <= d) || (d >= a && d <= b)) {
+            t += 1;
+        }
+    }
+
+    return t;
+}
+
+
+console.log(`Day one: ${part_1()}`);
+console.log(`Day two: ${part_2()}`)

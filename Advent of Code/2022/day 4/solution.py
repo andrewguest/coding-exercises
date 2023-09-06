@@ -11,7 +11,7 @@ def read_input_file(filepath: str = "./input.txt") -> list[str]:
     return file_lines
 
 
-def day_1() -> int:
+def part_1() -> int:
     data = read_input_file()
 
     t = 0
@@ -23,22 +23,18 @@ def day_1() -> int:
     return t
 
 
-def day_2() -> int:
+def part_2() -> int:
     data = read_input_file()
 
     t = 0
     for line in data:
         a, b, c, d = map(int, re.findall(r"(\d+)", line))
-        print(a)
-        print(b)
-        print(c)
-        print(d)
         if (b >= c and b <= d) or (d >= a and d <= b):
             t += 1
 
     return t
 
 
-print(f"Day One: {day_1()}")
-print(f"Day Two: {day_2()}")
+print(f"Day One: {part_1()}")
+print(f"Day Two: {part_2()}")
 
