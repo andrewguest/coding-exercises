@@ -43,5 +43,5 @@ function part_2(): number {
 }
 
 
-console.log(`Day one: ${part_1()}`);
-console.log(`Day two: ${part_2()}`)
+console.log(`Part 1: ${part_1()}`);
+console.log(`Part 2: ${part_2()}`)
