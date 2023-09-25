@@ -1,5 +1,3 @@
-import 'dart:math';
-
 void main() {
   // Number of primes found
   int count = 1;
