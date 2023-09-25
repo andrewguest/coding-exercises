@@ -1,15 +1,13 @@
 import 'dart:convert';
 import 'dart:io';
 
-void part_1() async {
+Future<List<String>> read_input_file({String filename = "./input.txt"}) async {
+  /*
+    Read `filename` and return an array containing each line of the file. Each line
+      in the file is returned as an entry in the array.
+  */
   List<String> file_contents = [];
-  int packet_start_index = 0;
-  int start_index = 0;
-  int end_index = 4;
-
-  // Read the input file
-  var file_path = "./input.txt";
-  final file = File(file_path);
+  final file = File(filename);
 
   if (await file.exists()) {
     final linesStream = file.openRead();
@@ -19,7 +17,18 @@ void part_1() async {
     }
   }
 
+  return file_contents;
+}
+
+void part_1() async {
+  // Read the input file
+  var file_contents = await read_input_file();
   String input_string = file_contents[0];
+
+  // Define variables
+  int packet_start_index = 0;
+  int start_index = 0;
+  int end_index = 4;
 
   while (packet_start_index == 0) {
     var current_substring = input_string.substring(start_index, end_index);
@@ -39,24 +48,14 @@ void part_1() async {
 }
 
 void part_2() async {
-  List<String> file_contents = [];
+  // Read the input file
+  var file_contents = await read_input_file();
+  String input_string = file_contents[0];
+
+  // Define variables
   int packet_start_index = 0;
   int start_index = 0;
   int end_index = 14;
-
-  // Read the input file
-  var file_path = "./input.txt";
-  final file = File(file_path);
-
-  if (await file.exists()) {
-    final linesStream = file.openRead();
-    await for (var line
-        in linesStream.transform(Utf8Decoder()).transform(LineSplitter())) {
-      file_contents.add(line);
-    }
-  }
-
-  String input_string = file_contents[0];
 
   while (packet_start_index == 0) {
     var current_substring = input_string.substring(start_index, end_index);
