@@ -7,7 +7,7 @@ def parse_input(input_filename: str = "input.txt") -> list[str]:
     return lines
 
 
-def day_1(input_lines):
+def part_1(input_lines):
     """
     Loop through each line of input.txt and combine the first and last digit
         to form a single two-digit number. Then SUM all of the two-digit numbers
@@ -33,4 +33,4 @@ def day_1(input_lines):
 
 if __name__ == "__main__":
     question_input = parse_input()
-    day_1(question_input)
+    part_1(question_input)
