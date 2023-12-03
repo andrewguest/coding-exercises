@@ -36,6 +36,33 @@ def part_1(input_lines):
     print(game_id_sums)
 
 
+def part_2(input_lines):
+    cube_powers_sum = 0
+
+    for game in input_lines:
+        color_counts = {"blue": 0, "green": 0, "red": 0}
+        game = game.strip()
+
+        handfuls = game.split(": ")[1].split("; ")
+
+        for handful_result in handfuls:
+            draw = handful_result.split(", ")
+            for d in draw:
+                count = int(d.split(" ")[0])
+                color = d.split(" ")[1]
+
+                if count > color_counts[color]:
+                    color_counts[color] = count
+
+        current_game_power = (
+            color_counts["blue"] * color_counts["green"] * color_counts["red"]
+        )
+        cube_powers_sum += current_game_power
+
+    print(cube_powers_sum)
+
+
 if __name__ == "__main__":
     input = parse_input()
     part_1(input)
+    part_2(input)
