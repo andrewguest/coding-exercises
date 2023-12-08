@@ -2,7 +2,7 @@ def parse_input(input_filename: str = "input.txt") -> list[str]:
     lines: list[str] = []
 
     with open(input_filename, "r") as file:
-        lines = file.readlines()
+        lines = file.read().splitlines()
 
     return lines
 
@@ -13,7 +13,6 @@ def part_1(input_lines):
     for game in input_lines:
         color_counts = {"blue": 0, "green": 0, "red": 0}
 
-        game = game.strip()
         game_id = int(game.split(": ")[0].split(" ")[1])
         handfuls = game.split(": ")[1].split("; ")
 
@@ -41,7 +40,6 @@ def part_2(input_lines):
 
     for game in input_lines:
         color_counts = {"blue": 0, "green": 0, "red": 0}
-        game = game.strip()
 
         handfuls = game.split(": ")[1].split("; ")
 

@@ -2,7 +2,7 @@ def parse_input(input_filename: str = "input.txt") -> list[str]:
     lines: list[str] = []
 
     with open(input_filename, "r") as file:
-        lines = file.readlines()
+        lines = file.read().splitlines()
 
     return lines
 
@@ -31,6 +31,37 @@ def part_1(input_lines):
     print(sum(numbers))
 
 
+def part_2(input_lines):
+    digits = (
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+    )
+    numbers = []
+
+    for line in input_lines:
+        temp_numbers = []
+        for index, character in enumerate(line):
+            if character.isdigit():
+                temp_numbers.append(int(character))
+                continue
+            for n, name in enumerate(digits):
+                if line[index:].startswith(name):
+                    temp_numbers.append(n)
+                    break
+        numbers.append(temp_numbers[0] * 10 + temp_numbers[-1])
+
+    print(sum(numbers))
+
+
 if __name__ == "__main__":
     question_input = parse_input()
     part_1(question_input)
+    part_2(question_input)
