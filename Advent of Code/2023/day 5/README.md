@@ -126,4 +126,3 @@ Consider all of the initial seed numbers listed in the ranges on the first line 
 
 ### What is the lowest location number that corresponds to any of the initial seed numbers?
 `60294664`
->>>>>>> 54fcea53ddecf6ba4792eb54ca9942fb4338f257
