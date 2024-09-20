@@ -27,6 +27,9 @@ This is my master list of timings of the solutions for the different solutions
 | 3 | Dart | 553 ms ||
 | 3 | Dart | 4 ms ||
 | 3 | Bun | 113 ms ||
+| 16 | Python | 186 ms ||
+| 16 | Dart | 588 ms | Uncompiled |
+| 16 | Dart | 8 ms | Compiled |
 | 18 | Python | 229 ms ||
 | 18 | Dart | 683 ms | Uncompiled|
 | 18 | Dart | 31 ms | Compiled|
