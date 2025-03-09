@@ -1,0 +1,22 @@
+services:
+  url-shortener:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: url-shortener-python
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 500M
+    depends_on:
+      - valkey
+    ports:
+      - "8123:8000"
+  valkey:
+    image: valkey/valkey:8.1-alpine
+    restart: on-failure
+    container_name: url-shortener-valkey
+    ports:
+      - "8124:6379"
