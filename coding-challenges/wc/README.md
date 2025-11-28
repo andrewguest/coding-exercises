@@ -88,7 +88,7 @@ In this step your goal is to support being able to read from standard input if n
 ---
 
 ## Implementations
-|Language| Step 1             |Step 2|Step 3|Step 4|Step 5|Final step|
-|---|--------------------|---|---|---|---|---|
-|Python| :black_square_button: |:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|
-|Go| :black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|
+|Language| Step 1                |Step 2|Step 3|Step 4|Step 5|Final step|
+|---|-----------------------|---|---|---|---|---|
+|Python| :white_check_mark:    |:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:black_square_button:|
+|Go| :black_square_button: |:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|:black_square_button:|
